@@ -1,0 +1,49 @@
+<ion-view style="background-color: white;" chache-view="false" can-swipe-back="false"> 
+
+    <ion-content overflow-scroll="true">
+        <div class="titlemf" >
+            <h4 class="feedTitle">Feedback</h4>
+        </div>
+
+        <div class="mainFeed">
+            <div class="row feedrow">
+                <div class="col  mycol"></div>
+                <div class="col  mycol-80"><label class="mylabel">NAME</label></div>
+                <div class="col mycol"></div>
+            </div>
+            <div class="row feedrow">
+                <div class="col  mycol"></div>
+                <div class="col  mycol-80"><input type="text" class="inputbox"  ng-model="text.name" ng-minlength="3" ng-maxlength="100"  placeholder="Your Name" id="feedemail"></div>
+                <div class="col mycol"></div>
+            </div>
+            <div class="row feedrow">
+                <div class="col  mycol"></div>
+                <div class="col  mycol-80"><label class="mylabel">EMAIL ID</label></div>
+                <div class="col mycol"></div>
+            </div>
+            <div class="row feedrow">
+                <div class="col  mycol"></div>
+                <div class="col  mycol-80"><input type="text" class="inputbox" name="feedemail" ng-model="text.email" ng-minlength="3" ng-maxlength="100" ng-pattern="/^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/" placeholder="youremail@gmail.com" id="feedemail"></div>
+                <div class="col mycol"></div>
+            </div>
+            <div class="row feedrow">
+                <div class="col mycol"></div>
+                <div class="col mycol-80"><label class="mylabel">MESSAGE</label></div>
+                <div class="col  mycol"></div>
+            </div>
+            <div class="row feedrow">
+                <div class="col mycol"></div>
+                <div class="col  mycol-80">
+                    <textarea style="height: 150px" ng-blur="again()" ng-click="text.show = ''" name="feed_msg" id="feedmsg" class="textareabox" ng-minlength="1" ng-model="text.show"></textarea>
+                </div>
+                <div class="col  mycol"></div>
+            </div>
+            <div class="row feedrow">
+                <div class="col  mycol"></div>
+                <div class="col  mycol-80"><input type="button" value="Submit Feedback" ng-click="feedBack()" class="button button-assertive button-full btn"></div>
+                <div class="col  mycol"></div>
+            </div>
+        </div>
+    </ion-content>
+
+</ion-view>

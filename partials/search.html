@@ -1,0 +1,103 @@
+<!--search page @siddharth-->
+<ion-view hide-nav-bar ="true" chache-view="false" can-swipe-back="false">
+    <ion-header-bar  class="search-bar " >
+
+        <div class="buttonsS ">
+            <i class="icon ion-chevron-left backB" ng-click="myGoBack()"></i>
+
+            <img src="img/genie-logo-g.png" alt="Side Navigation" ng-click="home()">
+        </div>
+        <div side="left" resizable>
+            <input type="text" id="q" placeholder="Search for your Product to get lowest prices.." 
+                   class="textb" focus="true"
+                   ng-keypress="keypress()"  onfocus="this.placeholder = ''" onblur="this.placeholder ='Search for your Product to get lowest prices..'"  ng-model="textSearch" style="width: {{windowWidth}}px" >
+        </div>
+
+    </ion-header-bar>
+    <ion-item class="fil" ng-show='scrollshow'>
+        Filter
+    </ion-item>
+    <div class="search_in">{{msg}}</div>
+    <div class='bar bar-subheader12' ng-hide="yes">
+        <span>Your Previous Searches</span>
+    </div>
+    <div class='mainclass'>
+
+        <ion-scroll  direction="x" class="bar bar-subheader1" scrollbar-x="false" style="height:37px;width:100%;margin-left: 48px;" ng-show='scrollshow'>
+            <div class=" filter1 row1 "  >
+
+                <ion-list class='filterSL1'>
+                    <ion-item class="filterS1" ng-click="All()">
+                        All
+                    </ion-item>
+                    <ion-item class="filterS1" ng-click="Books()">
+                        Books
+                    </ion-item>
+                    <ion-item class="filterS1" ng-click=" MobileTablets()">
+                        Mobile & Tablets
+                    </ion-item>
+<!--                    <ion-item class="filterS1" ng-click="Gaming()">
+                        Gaming
+                    </ion-item><ion-item class="filterS1" ng-click="HealthBeauty()">
+                        Health & Beauty
+                    </ion-item>-->
+                    <ion-item class="filterS1" ng-click="LaptopDesktop()">
+                        Laptop & Desktop
+                    </ion-item>
+                    <ion-item class="filterS1" ng-click="Camera()">
+                        Camera
+                    </ion-item>
+                    <ion-item class="filterS1" ng-click="TvHomeAudio()">
+                        Tv & Home Audio
+                    </ion-item>
+                    <ion-item class="filterS1" ng-click="HomeKitchen()">
+                        Home & Kitchen
+                    </ion-item>
+<!--                    <ion-item class="filterS1" ng-click="BabyToys()">
+                        Baby & Toys
+                    </ion-item>-->
+                    <ion-item class="filterS1" ng-click="ComputerCompAcc()">
+                        Computer Comp/Acc
+                    </ion-item>
+
+                    <div class="clearfix"></div>
+                </ion-list>
+                <div class="clearfix"></div>
+
+            </div>   
+
+        </ion-scroll>
+    </div>
+
+    <ion-content direction="xy" class='has-header ioncontent' ng-click="stop()">
+
+        <ion-list ng-repeat='res in response1 track by $index' ng-hide="yes">
+            <div class='ioitem1'>
+                {{res}}
+            </div>
+        </ion-list>
+        <div ng-show='scrollshow'>
+            <div class="nomore card "  ng-show="abc" >
+                <i>{{msg1}}</i>
+
+            </div>
+
+
+            <ion-list ng-repeat='res in response.lines track by $index' ng-hide="linshow">
+                <div class='ioitem1 border' ng-bind-html='res.line' ng-click="goto(res.info)">
+
+                </div>
+            </ion-list>
+            <ion-list ng-repeat='res in response.bestMatch track by $index'>
+                <div class="border" ng-click="gotoProduct(res.url, res.text,res.product_id)">
+                    <div class="ioitem1">
+                        <span>{{res.text}}</span>
+
+                        <span ng-bind-html=res.longtext></span>
+                    </div>
+                </div>
+            </ion-list>
+
+        </div>
+    </ion-content>
+</ion-view>

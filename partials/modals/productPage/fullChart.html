@@ -1,0 +1,53 @@
+<ion-modal-view >
+    <ion-header-bar class="myhead">
+           <div class="row myfollow">
+
+            <div class="buttonsS col-10" ng-click="fullChartClose()">
+                <i class="ion-arrow-left-c backB backme"></i>
+
+                <img style="height: 38px;" src="img/genie-logo-g.png" alt="Side Navigation">
+            </div>
+
+            <div class="col-90" style="text-align:center">
+             
+            </div>
+        </div>
+    </ion-header-bar>
+    <ion-content direction="xy" overflow-scroll="false" class="has-header">
+
+        <div class="titlem" >
+            <span ng-show="tableEmptyFull">Price Trend Across All Website</span>
+            <p ng-hide="tableEmptyFull">Chart Unavailable</p>
+        </div>
+        <div class="row ">
+            <div class="col-50 tableColHead"></div>
+
+            <div class="col-50 tableColHead right">
+                <button class="red_button" ng-click="productTrend()">Lowest Price Chart</button>
+            </div>
+        </div>
+        <div class="tableMain" ng-show="tableEmptyFull">
+
+            <div class="row ">
+
+                <div class="col-33 tableColHead"><b>Date</b>
+                    <div class="row" style="padding:0px;" ng-repeat="table in tableDataFull track by $index">
+                        <div class="col tableCol">
+                            {{table.date}}
+                        </div>
+                    </div>          
+                </div>
+                <div class="col headColfull">
+                    <div class="row headfull" >
+                        <div class="col-50 tableColHead" ng-repeat="head in colHeading track by $index"><b>{{head.id}}</b>
+                            <div class="row" style="padding:0px;" ng-repeat="table in tableDataFull track by $index">
+                                <div class="col tableCol" ng-bind="Price(head.id, $index)"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </ion-content>
+</ion-modal-view>

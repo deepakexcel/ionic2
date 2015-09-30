@@ -1,0 +1,61 @@
+<ion-view hide-nav-bar ="true" chache-view="false" can-swipe-back="false">
+    <ion-header-bar>
+        <div class="header_sign_in1">
+            <div class="cross1" ng-click="goback()">
+                <!--<span><img alt="back" src="img/cross.png" /></span>-->
+                <button class="button button-clear"> 
+                    <i class="icon icon-right ion-android-close">
+                    </i>
+                </button>
+            </div>
+            <div class="title12" >
+                <span>Sign in to PriceGenie</span>
+            </div>
+        </div>
+    </ion-header-bar>
+    <ion-content class='register1' overflow-scroll="true">
+        <div class="content_sign_in">
+            <div id="login_error_status" style="display: none"></div>
+
+            <div class="alert-success prev_msg">
+
+            </div>
+
+            <div style="clear: both"></div>
+            <div class="email_login">
+                <form id="login_frm">
+
+                    <div class="text_fieids">
+                        <input type="text" placeholder="Email or Username" id="reg" name="login_email" ng-model="model.login_email" ng-pattern="/^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/" /> 
+                        <input type="password" placeholder="Password" id="reg" name="login_pwd" ng-model="model.login_pwd"> 
+
+                    </div>
+                    <div style="clear: both"></div>
+                    <div class="login_sub">
+                        <button class="button button-block button-small bt1" ng-click="login()">Sign In</button>
+
+                    </div>
+                    <div style="clear: both"></div>
+                    <div class="forgot_pwd" ng-click="show1()">
+                        Resend Confirmation Email
+                    </div>
+                    <div class="forgot_pwd" ng-click="show()">
+                        Forgot Password?
+                    </div>
+
+                </form>
+            </div>
+            <div class="other_register">
+
+                <button class="button button-block button-small bt2" ng-click="facebookLogin()">Sign in with Facebook</button>
+
+                <button class="button button-block button-small bt3" ng-click="gogleLogin()">Sign in with Google+</button>
+            </div>
+            <div style="clear: both"></div>
+
+        </div>
+        <div style="clear: both"></div>
+        <div class="footer"></div>
+    </ion-content>
+</ion-view>
+

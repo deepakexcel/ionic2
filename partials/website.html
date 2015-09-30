@@ -1,0 +1,51 @@
+<ion-view style="background-color: rgb(227, 224, 224);" cache-view='false' hide-nav-bar="true" can-swipe-back="false"> 
+    <ion-header-bar align-title="left" class="myheaderbar">
+        <div class="buttons">
+            <button class="button button-clear" ng-click="$ionicGoBack()"> 
+                <i class="icon icon-right ion-android-close">
+
+                </i></button>
+        </div>
+        <h1 class="title" style="text-align: center">Noitfy</h1>
+    </ion-header-bar>
+    <ion-content direction="y" overflow-scroll="true">
+        <div>
+            <div class="deal_notify_text">Select the sellers from below for which you need to be notified</div>
+            <div>
+                <div class="filter_title2">
+                    <div class="title_text">Product Sellers ({{webs.length}} Sellers)</div>
+                    <div class="title_next" ng-show="next" style="" ui-sref="menu.notifytext">Next</div>
+
+                    <div class="clearfix"></div>
+
+                </div>
+
+
+
+                <div class="cateories">
+                    <div class="row catrow" >
+                        <div class="col-80 catcol9 ">
+                            Select All
+                        </div>
+                        <div class="col-20 catcol1">
+                            <img class="checkimg" src="img/round_grey.png" on-tap="addWebAll()" ng-hide="next2"/>
+                            <img class="checkimg" src="img/checked.png" on-tap="subWebAll()" ng-show="next2"/>
+                        </div>
+                    </div>
+                </div>
+                <div class="cateories">
+                    <div class="row catrow" ng-repeat="web in webs track by $index">
+                        <div class="col-80 catcol9">
+                            <!--<img class="lowerextraimg "  ng-src="img/fav/{{web.webname| lowercase}}.png">-->
+                            {{web.webname}}
+                        </div>
+                        <div class="col-20 catcol1">
+                            <img class="checkimg" src="img/round_grey.png" on-tap="addWeb(web.webname, $index)" ng-hide="$index == web.show"/>
+                            <img class="checkimg" src="img/checked.png"  on-tap="subWeb(web.webname, $index)" ng-show="$index == web.show"/>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </ion-content>
+</ion-view>
+

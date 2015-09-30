@@ -1,0 +1,47 @@
+<ion-modal-view>
+    <ion-header-bar class="myhead">
+
+        <div class="row myfollow">
+
+            <div class="buttonsS col-10" >
+                <i class="ion-arrow-left-c backB backme" ng-click="trendModalClose()"></i>
+
+                <img style="height: 38px;" src="img/genie-logo-g.png" alt="Side Navigation" ng-click="home()">
+            </div>
+
+            <div class="col-90" style="text-align:center">
+                <p class="ptext">{{categoryDisplay}}</p>
+            </div>
+        </div>
+    </ion-header-bar>
+    <ion-content  class="has-header" overflow-scroll="true">
+
+
+
+        <div class="titlem" >
+            <span ng-show="tableEmpty">Price Trend Showing Lowest Prices</span>
+            <p ng-hide="tableEmpty">Chart Unavailable</p>
+        </div>
+        <div class="row ">
+            <div class="col-50 tableColHead"></div>
+
+            <div class="col-50 tableColHead right">
+                <button class="red_button" ng-click="fullChart()">Full Price Chart</button>
+            </div>
+        </div>
+        <div class="tableMain" ng-show="tableEmpty">
+
+            <div class="row "  style="padding:5px;">
+                <div class="col-33 tableColHead"><b>Date</b></div>
+                <div class="col-33 tableColHead"><b>Price</b></div>
+                <div class="col-33 tableColHead"><b>Website</b></div>
+            </div>
+            <div class="row" style="padding:5px;" ng-repeat="table in tableData track by $index">
+                <div class="col-33 tableCol">{{table.timeslot}}</div>
+                <div class="col-33 tableCol">{{table.price}}</div>
+                <div class="col-33 tableCol">{{table.website}}</div>
+            </div>
+        </div>
+
+    </ion-content>
+</ion-modal-view>

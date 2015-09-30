@@ -1,0 +1,81 @@
+<ion-view view-title="" cache-view="false" style="background-color: #fff" can-swipe-back="false">
+    <ion-content overflow-scroll="true">
+<!--        <div class="upper">
+
+            <span style="color: #434648">YOUR ALERTS</span>
+
+        </div>-->
+        <div class="lower">
+            <div class="box" ng-repeat="res in response.data track by $index">
+                <div class="box1" ng-init="kk = break(res.data[0].website)">
+                    <div class='box12'>
+                        <p id="a1"> {{res.short}}</p>
+                        <i id="b">Started On:{{res.time}}</i><br>
+                        <i id="b" ng-show="res.type == 'price_watch_start'">Starting Price:{{res.base_price}}</i>
+                    </div>
+                    <div style='clear:both'></div>
+                    <div class='sub'>
+                        <div class="sub11">
+                            <div  ng-repeat="data in kk track by $index">
+                                <img class="lowerextraimg1 "  src="img/logos/{{data|lowercase}}.png">
+                            </div>
+
+                        </div>
+                        <div class='img12'>
+                            {{res.data[0].done_time}}
+                        </div>
+
+                        <div class='img13'>
+                            {{res.data[0].current_price}}
+                        </div>
+                        <div style='clear:both'></div>
+                    </div>
+                  
+                    <div class="priceHistory" ng-repeat="da in response1.history track by $index">
+                       <div class="daterate"> 
+                        <div class="date1">{{da.date}}</div>
+                        <div class="rate">{{da.price}}</div>
+                       </div>
+                    </div>
+                    <div class="cat" >
+                        <span ng-hide="res.type == 'price_watch_start'"> Category(s):<i id="b1">{{res.data[0].cat}}</i></span>
+                    </div>
+                    <div style="clear:both"></div>
+
+                    <div class="cat2">
+
+                        <div class="sub1">
+                            <button class="button  buttonDeal" ng-click="price(res.id)">Price History</button>   
+                            <span id="stp" ng-show="res.stopped == 1">Stopped!</span>
+                        </div>
+                        <div class="sub123" ng-show="res.type == 'price_watch_start'">
+                            <button class="button  buttonDeal1" ng-click='open(res.link)' >Buy Now</button>   
+
+                        </div>
+                        <div class="sub2" ng-click="stoped(res.id, res.type)" ng-hide="res.stopped == 1">
+                            <i class="icon ion-trash-a iconColor"></i>
+                        </div>
+                        <div style="clear:both"></div>
+                    </div>
+                    <div style="clear:both"></div>
+                </div>
+            </div>
+        </div>
+        <div class="nonotice1" ng-show="yes">
+            <div class="iconholder">
+                <img src="img/nonotification.png">
+            </div>
+            <div class="msgholder">
+                <p>No Notifications</p>
+            </div>
+            <div class="textholder">
+                <p>When you have notifications, you'll</p>
+                <p>see them here.</p>
+            </div>
+            <div class="linkholder" ui-sref="menu.home">
+                Start Browsing
+            </div>
+        </div>
+
+    </ion-content>
+</ion-view>

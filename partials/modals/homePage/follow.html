@@ -1,0 +1,67 @@
+<ion-modal-view style="background-color: rgb(227, 224, 224);">
+    <ion-header-bar class="myhead">
+        <div class="row myfollow">
+          
+              <div class="buttonsS col-10" ng-click="followModalClose()">
+                <i class="icon ion-chevron-left backB backme"></i>
+
+                <img style="height: 38px;padding: 0 0 0 10px;" src="img/genie-logo-g.png" alt="Side Navigation">
+            </div>
+            <div class="col-90" style="text-align:center">
+                <p class="ptext"> Price Change Alert</p>
+            </div>
+        </div>
+    </ion-header-bar>
+    <ion-content overflow-scroll="true">
+        <div ng-show="pricedata">
+            <div class="row notifyrow">
+                <div class="col-75 notifycol">
+                    Select the website from below for which you need price alerts. Maximum of 3 websites. 
+
+                </div>
+                <div class="col-25 btncol" style="text-align:right;">
+                    <button class="btn mybtn" ng-click="processFollow()">Start</button>
+                </div>
+            </div>
+            <div class="row webrow1">
+                <div class="col webcol1">
+                    <div class="row webrowmain" ng-repeat="website in pricedata track by $index">
+                        <div class="col-90 webcolmain">
+                            {{website.website}}
+                        </div>
+                        <div class="col-10 webcheck">
+                            <img src="img/round_grey.png" ng-click="addWeb(website.website, $index)" ng-hide="$index == website.show"/>
+                            <img src="img/checked.png" ng-click="subWeb(website.website, $index)" ng-show="$index == website.show"/>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row fullrow1">
+                <div class="col fullcol1">
+                    <div class="row fullrowmain" ng-repeat="fulldata in pricedata track by $index">
+                        <div class="col-34 alertImagecol">
+                            <img ng-src="{{fulldata.image}}" class="alertImage">
+                        </div>
+                        <div class="col-66 fullcolmain">
+                            <div class="row fullname">
+                                <div class="col fullnamecol">  {{fulldata.name}}</div>
+                            </div>
+                            <div class="row fullprice">
+                                <div class="col fullpricecol">  Rs.{{fulldata.disc_price}}</div>
+                            </div>
+                            <div class="row fullwebsite">
+                                <div class="col fullwebsitecol">  {{fulldata.website}}</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row msg" ng-show="msg">
+            <div class="col msgcol">
+                {{msg}}
+            </div>
+        </div>
+
+    </ion-content>
+</ion-modal-view>

@@ -1,0 +1,58 @@
+<ion-view hide-nav-bar ="true">
+    <ion-header-bar class='myhead' align-title="center">
+        <h1 class="title"><img src='img/logo1.png'></h1>
+    </ion-header-bar>
+    
+    <ion-content>
+<!--    <div class="offline-msg centered">
+        <i class="ion-sad fa-2x"></i>
+        <span class="info">No Internet Connection Detected. <br/>Please reconnect and try again.</span><br>
+        -->
+        <div class='offline1'>
+            <span>Oops! Are you connected to internet?</span><br>
+            <span>Currently Browsing in Offline Mode!</span>
+        </div>
+        <div class="mainrecent">
+            <div class="titler">
+                <span>Your Recently Viewed Products</span>
+                <div id="small_triangle">
+                    <img src="img/small_triangle.png" alt="pointer">
+                </div>
+            </div>
+
+
+            <div ng-repeat="recent in recentData track by $index" style="padding:0px">
+
+
+                <div class="row daysago">   
+                    <div class="col-50 whenwhen" ng-show="recent.diff == 0 && recent.show == 'show'" >
+                        Today
+                    </div>
+                    <div class="col-50 whenwhen" ng-show="recent.diff != 0 && recent.show == 'show'" >
+                        {{recent.diff}} Days Ago
+                    </div>
+                    <div class="col-50 countno" ng-show=" recent.show == 'show'">
+                        Viewed {{recent.count}} Products
+                    </div>
+                </div>
+                <div class="row myli" ng-click="product(recent)">
+                    <div class="col ">
+                        {{recent.query}}
+                    </div>
+                </div>
+                <div class="row" >
+                    <div class="nonotice col" style="text-align:center" ng-show="recent.msg">
+                        <div class="iconholder">
+                            <img src="img/nonotification.png">
+                        </div>
+                        <div class="msgholder">
+                            <p>  {{recent.msg}}</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </ion-content>
+</ion-view>

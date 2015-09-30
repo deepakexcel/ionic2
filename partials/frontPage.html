@@ -1,0 +1,50 @@
+
+<div class='maindiv'>
+    <ion-content class="mpage" style="margin:0px;" overflow-scroll="true">
+        <div class='headerdiv'>
+            <div class='leftHeader'>
+                <span id='ba'> Get started</span><br>
+                <span id='ab' ui-sref="menu.register">Sign up here</span>
+            </div>
+            <div class='linemidle'>
+
+            </div>
+            <div class='rightHeader'>
+                <span id='ba'>Have an account</span><br>
+                <span id='ab' ui-sref="menu.login">Sign in</span>
+            </div>
+            <div style="clear: both"></div>
+        </div>
+
+        <div class='middleBox'>
+            <div class='boxtext'>
+                <p id='t1'>GET STARTED</p>
+                <p id='t2'>Its free! connect with your</p>
+                <p id='t2'>Email or Facebook or Google account</p>
+            </div>
+            <div style="clear: both"></div>
+            <div class='linem'></div>
+            <div style="clear: both"></div>
+            <div class='loginBox'>
+                <div class="register_sub">
+
+                    <button class="button button-block button-small bt1" ui-sref="menu.register"  >Sign up with your email</button>
+                    <button class="button button-block button-small bt2" ng-click="facebookLogin()">Connect with Facebook</button>
+
+                    <button class="button button-block button-small bt3" ng-click="gogleLogin()">Connect with Google+</button>
+                </div>
+            </div>
+
+        </div>
+        <div class='arrow'>
+            <img ng-src='img/arrow_getting_started.png'>
+        </div>
+        <div class='logo'>
+            <img ng-src='img/logo1.png'>
+        </div>
+        <div class='footer'>
+            <p id='foot' ui-sref='menu.home'>skip for now</p>
+        </div>
+    </ion-content>
+
+</div>

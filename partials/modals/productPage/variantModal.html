@@ -1,0 +1,58 @@
+<ion-modal-view>
+    <ion-header-bar class="myhead" >
+
+        <div class="row myfollow">
+
+            <div class="buttonsS col-10" ng-click="variantModalClose()">
+                <i class="ion-arrow-left-c backB backme"></i>
+
+                <img style="height: 38px;" src="img/genie-logo-g.png" alt="Side Navigation">
+            </div>
+
+            <div class="col-90" style="text-align:center">
+
+            </div>
+        </div>
+    </ion-header-bar>
+    <ion-content style="background-color: rgb(227, 224, 224);" overflow-scroll="true">
+
+        <div class="row">
+
+            <div class="col">
+                <ion-item ng-repeat="mainRes in variantData.data track by $index" class="myItem">
+                    <div class="midall">
+                        <div class="row item midall1">
+                            <div class="col-20 newimage">
+                                <img class="extraImg" src="{{mainRes.image}}">
+                            </div>
+                            <div class="col-80  genie_name item-text-wrap">
+                                <p class="newname">  {{mainRes.name}}</p>
+
+                                <p class="newprice">Rs. {{mainRes.price}}</p>
+                                <a class="button save"  ng-click="open(mainRes.href)">BUY NOW</a>
+
+
+                            </div>
+
+                        </div>
+                        <div class="row item lowerextra">
+                            <div class="col-10 weblogo">
+                                <img class="lowerextraimg "  src="img/fav/{{mainRes.website| lowercase}}.png">
+                            </div>
+                            <div class="col-20 website">
+                                <span >{{mainRes.website}}</span>
+                            </div>
+                            <div class="col-50 " >
+
+                            </div>
+                            <div class="col-20">
+                                <!--<a href="#" ng-click="watch(mainRes.href, mainRes.website, mainRes.price, mainRes.name)" class="button button-small watch">Watch Price</a>-->
+                            </div>
+                        </div>
+                    </div>
+                </ion-item>
+            </div>
+        </div>
+    </ion-content>
+</ion-modal-view>
+

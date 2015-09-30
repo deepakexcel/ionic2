@@ -1,0 +1,116 @@
+.mybuttonnav{
+    color: white!important;
+}
+.title_next {
+    background-color: #e3ae22;
+    color: #333;
+    float: left;
+    font-size: 0.85em;
+    text-align: center;
+    text-transform: uppercase;
+    width: 13%;
+}
+
+
+.notify_text_area {
+    font-size: 0.9em;
+    margin: 0 auto;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    text-align: left;
+    margin: 0px 10px 3px 10px;     
+    padding: 6px;
+    -webkit-border-radius: 4px;     -moz-border-radius: 4px;     border-radius: 4px;
+    width: 95%;
+}
+
+.notify_term_next_btn {
+    font-size: 0.90em!important;
+    margin-left: 1%;
+    text-align: center;
+    width: 71px!important;
+    color: white;
+    margin: 0px 10px 3px 10px;     
+}
+.notify_term_skip_btn {
+    color: #777;
+    font-size: 0.90em;
+    text-align: right;
+    width: 98%;
+}
+
+.deal_notify_finish_heart {
+    background-image: url('../img/follow_heart_hover.png');
+    background-position: center center;
+    background-repeat: no-repeat;
+    border: 1px solid #aaa;
+    -webkit-border-radius: 30px;
+    -moz-border-radius: 30px;
+    border-radius: 35px;
+    height: 65px;
+    margin: 0 auto;
+    width: 65px;
+    margin-top: 35px;
+}
+.deal_notify_text {
+    color: #777;
+    font-size: 0.9em;
+    margin: 0 auto;
+    margin: 20px 10px 0px 10px;     padding: 6px;
+}
+a {
+    color: #0088CC;
+    text-decoration: none;
+}
+.myheaderbar{
+    box-shadow: 0px 2px 2px #bbb;
+    -moz-box-shadow: 0px 2px 2px #bbb;
+    -webkit-box-shadow: 0px 2px 2px #bbb;
+}
+
+.filter_title2 {
+    background-color: #fff;
+    color: #808080;
+    font-size: 0.96em;
+    margin: 6px 10px 9px 10px;
+    padding: 6px;
+    box-shadow: 0 1px 0 #ccc;
+    -moz-box-shadow: 0 1px 0 #ccc;
+    -webkit-box-shadow: 0 1px 0 #ccc;
+}
+.title_text {
+    width: 87%;
+    float: left;
+    text-transform: none;
+}
+.catcol9 {     height: 30px;     
+               line-height: 30px;               
+               text-transform: none;}
+.catrow {     
+    color: #808080;     background-color: #fff;
+    font-size: 0.86em;     
+    margin: 0 auto;     
+    padding: 5px 3px 0px 15px!important;     text-transform: uppercase;     width: 98%;     margin-top: 10px;     box-shadow: 0 1px 0 #ccc;     -moz-box-shadow: 0 1px 0 #ccc;     -webkit-box-shadow: 0 1px 0 #ccc;     
+}
+.catcol1 {
+    text-align: right;}
+
+img.checkimg {
+    padding: 8px 11px 7px 30px;
+}
+.cateories{
+    margin: 6px 10px 9px 10px;
+
+    /* width: 100%; */
+    background-color: #fff;
+}
+.style{
+    font-size: 1em;
+    margin: 0 8px 0 5px;
+    padding: 6px;
+}
+.btnico {
+    color: white;
+    font-size: 32px;
+    font-weight: 600!important;
+}

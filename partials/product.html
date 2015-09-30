@@ -1,0 +1,186 @@
+<ion-view style="background-color: rgb(227, 224, 224);" cache-view="false" can-swipe-back="false"> 
+    <ion-nav-buttons side="right" cache-view='false' ng-show="defaultButton">
+        <!--        <button  side=""  class="button button-clear button-large mybuttonnav" ng-click="productTrend()">
+                    <i class='icon ion-stats-bars colorCH'></i>
+                </button>-->
+        <button  class="button button-clear button-large  mybuttonnav" ui-sref="menu.search"> 
+            <i class='icon ion-search colorCH'></i>
+        </button>  
+        <button ng-click="follow(0, 0, qid)" class="button button-clear button-large  mybuttonnav" >
+            <i class='icon ion-ios-heart colorCH'></i>
+        </button> 
+    </ion-nav-buttons>
+    <ion-content overflow-scroll="true">
+        <ion-refresher   pulling-text="Pull to refresh..."  on-refresh="doRefreshProduct()">  </ion-refresher>
+        <ion-item ng-repeat="mainData in main track by $index" class="myItem" ng-if="mainData.name_text">
+            <div class="topitem">
+                <div class="topitemcontent" >
+                    <div class="row itemHeading">
+                        <div class="item-text-wrap col12">
+                            {{mainData.name_text}}
+                        </div>
+
+
+                    </div>
+
+
+                    <div class="row itemspec">
+                        <div class="col col23">
+
+                            <div class="bind" ng-bind-html="mainData.quick_spec_html"></div>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+
+
+            <div class="row">
+                <div class="col">
+                    <ion-item ng-repeat="mainRes in mainData.result track by $index" class="myItem " ng-if="mainRes">
+                        <div ng-init="i = $index">
+                            <p class="catname2 mname"  ng-show="$index == 0" ng-hide="$index > 0">COMPARE PRICES</p>
+
+                        </div>
+                        <div class="midall">
+                            <div class="row item midall1">
+                                <div class="col-20 newimage">
+                                    <img class="extraImg" ng-src="{{mainRes.image}}">
+                                </div>
+                                <div class="col-80 genie_name item-text-wrap">
+                                    <p class="newname">  {{mainRes.name}}</p>
+                                    <p class="newprice"> Rs. {{mainRes.price}}</p>
+                                    <a class="button save"  ng-click="open(mainRes.url)">BUY NOW</a>
+
+                                </div>
+
+                            </div>
+                            <div class="row item lowerextra">
+                                <div class="col-10 weblogo" >
+                                    <img class="lowerextraimg "  ng-src="img/fav/{{mainRes.website| lowercase}}.png">
+                                </div>
+                                <div class="col-20 website">
+                                    <span >{{mainRes.website}}</span>
+                                </div>
+                                <div class="col-50 " >
+                                    <div class="varient" ng-show="variant(mainRes.varient_data)" ng-click="variantShow(mainRes.varient_data)">
+                                        {{variant(mainRes.varient_data)}} Variant
+                                    </div>
+                                </div>
+                                <div class="col-20">
+                                    <!--<a ng-click="watch(mainRes.href,mainRes.website,mainRes.price,mainRes.name,mainRes.org_url)" class="button button-small watch">Watch Price</a>-->
+                                </div>
+                            </div>
+                        </div>
+                    </ion-item>
+                </div>
+            </div>
+        </ion-item>
+
+        <div ng-show="chart">
+            <div class=" mytab" >
+                <button class="chrtbtnl" ng-click="chart1f()"><i class="icon btnico ion-stats-bars"></i></button>
+                <button class="chrtbtnr" ng-click="chart2f()"><i class="icon btnico  ion-ios-book-outline"></i></button>
+            </div>
+            <!--class="proTrend" ng-show="chart1" ng-hide="chart2"-->
+            <div ng-class="{'chart':chart1 == true}" class="mychart1">
+                <chartist   chartist-chart-options="options" class="ct-chart" chartist-data="data" chartist-chart-type="Line" chartist-responsive-options="responsiveOptions"></chartist>
+
+                <!--        
+                -->
+            </div>
+            <!--ng-show="chart2" ng-hide="chart1"--> 
+            <div ng-class="{'chart':chart2 == true}" class="mychart2">
+                <div class="row">
+                    <div  ng-repeat="flag in colHeading track by $index" class="col-20 ct-series-a .ct-line"> {{flag.id}}</div>
+                </div>
+            </div>
+            <div ng-class="{'chart':chart2 == true}" class="mychart2">
+                <chartist   chartist-chart-options="options2" class="ct-chart" chartist-data="data2" chartist-chart-type="Line" ></chartist>
+            </div>
+        </div>
+
+        <!--        <div ng-show="chart">
+                    <div class=" mytab" >
+                        <button class="chrtbtnl" ng-click="chart1f()"><i class="icon btnico ion-stats-bars"></i></button>
+                        <button class="chrtbtnr" ng-click="chart2f()"><i class="icon btnico  ion-ios-book-outline"></i></button>
+                    </div>
+                    class="proTrend" ng-show="chart1" ng-hide="chart2"
+                    <div ng-class="{'chart':chart1==true}" class="mychart1">
+                        <chartist   chartist-chart-options="options" class="ct-chart" chartist-data="data" chartist-chart-type="Line" chartist-responsive-options="responsiveOptions"></chartist>
+        
+                                
+                        
+                    </div>
+                     ng-show="chart2" ng-hide="chart1" 
+                    <div ng-class="{'chart':chart2==true}" class="mychart2">
+                        <chartist   chartist-chart-options="options2" class="ct-chart" chartist-data="data2" chartist-chart-type="Line" ></chartist>
+                    </div>
+                </div>-->
+
+
+        <div class="pconent" >
+            <ion-item ng-repeat="extraData in extra track by $index"  class="che" ng-if="extraData.length">
+
+                <div ng-init="i = $index">
+                    <p class="catname2"  ng-show="$index == 0" ng-hide="$index == 1">PRODUCTS FROM SAME BRAND</p>
+                    <p class="catname2" ng-show="$index == 1" ng-hide="$index == 0">YOU MAY ALSO LIKE</p>
+                    <!--<a  class="button viewall"  ng-click="check(catItems.cat_id,catItems.sub_cat_id,catItems.cat_name)" >View All</a>-->
+                    <div class="clearfix"></div>
+                </div>
+                <div class="clearfix"></div>
+                <!--                <ion-scroll  direction="x" scrollbar-x="false" style="width: 100%; height: 195px;background-color: white">
+                                    <div class="pitem2"  style="width: 1000px; height: 205px">
+                                        <div class="row " style="padding:0px;" ng-init="j = 0">
+                                            <p ng-hide="extraData.length">no products here</p>
+                                            <ion-item ng-repeat="item in extraData track by $index"   class="che2  text-center item-text-wrap">
+                
+                                                <img class="heart" ng-show="item.redheart == 1" ng-click="unfollow(i, j, item.query_id)" src="img/follow_heart_hover.png" alt=""/>
+                                                <img class="heart" ng-click="follow(i, j, item.query_id)"  src="img/follow_heart.png" alt=""/>
+                
+                                                <div class="item item-body popcon" ng-init="j = $index" ng-click="product(item)">
+                
+                                                    <div class="proimage" >
+                                                        <img ng-src="{{item.image}}"  class="popimage">
+                                                    </div>
+                                                    <p class="popname" ng-bind="cut(item.full_name)"></p>
+                                                    <p class="poptext" style="color:#e3ae22">From Rs:{{item.lowest_price}}</p>
+                                                    <p class="poptext" style="color:#e3ae22">Sellers:{{item.sellers}}</p>
+                
+                                                </div>
+                                            </ion-item>
+                                        </div>
+                                    </div> 
+                                </ion-scroll>-->
+                <div  >
+                    <div  style="padding:0px;" ng-init="j = 0">
+
+                        <ion-item class="all_data1 productitem item" ng-repeat="item in extraData track by $index">
+
+                            <div class="row row12" ng-init="j = $index" ng-click="product(item)">
+                                <div class=" prod_image product-image">
+                                    <img class="imgs" ng-src="{{item.image}}">
+                                </div>
+
+                                <div class="product-info prod_details">
+                                    <div class=" prod_name item-text-wrap" ng-bind="cut(item.full_name)">
+
+                                    </div>
+                                    <div class="prod_price">
+                                        <span ><div class="display_price"><span class="price_text">From </span>:{{item.lowest_price}}</div><div class="seller"><span class="seller_text">{{item.sellers}} Sellers </span></div></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="redheart" ng-class="{'redheart1':change12 == item.query_id}" ng-click="follow(i, j, item.query_id)">
+                            </div>
+
+
+                            <!--</div>-->
+                        </ion-item>
+                    </div>
+                </div> 
+            </ion-item>
+        </div>
+    </ion-content>
+</ion-view>

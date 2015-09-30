@@ -1,0 +1,82 @@
+<!--main controller view menu...siddharth-->
+
+<!--<ion-side-menus enable-menu-with-back-views="true" delegate-handle='menuq' cache-view="false"  >
+    <ion-side-menu-content >-->
+<ion-view ng-click="hidemenu()">
+        <ion-nav-bar class="mainHeader" delegate-handle="nav">
+            
+            <ion-nav-back-button class="button-clear" >
+                                <i class="icon ion-chevron-left colorCH"></i>    
+            </ion-nav-back-button>
+
+            <ion-nav-buttons side="secondary">
+                <button class="button button-icon button-clear ion-android-more-vertical buttonColor "  on-tap="showMenu()">
+                </button>
+
+            </ion-nav-buttons>
+            <ion-nav-buttons side="left" >
+                <img src="img/genie-logo-g.png" alt="Side Navigation" ng-click="home()">
+
+            </ion-nav-buttons>
+            <ion-nav-buttons side="right" >
+                <!--<button  class="button button-clear button-large mybuttonnav" ui-sref="menu.star"><i class='icon ion-ios-star colorCH'></i></button>-->    
+                <button  class="button button-clear button-large  mybuttonnav" ui-sref="menu.YourAlert"> <i class='icon ion-ios-bell colorCH'></i></button>  
+                <button  class="button button-clear button-large  mybuttonnav" ui-sref="menu.search"> <i class='icon ion-search colorCH'></i></button>  
+            </ion-nav-buttons>
+        </ion-nav-bar>
+        <ion-nav-view name="mainView"></ion-nav-view>  <!--view for child views -->
+<!--    </ion-side-menu-content>-->
+
+<!--    <ion-side-menu side="right" width="220" cache-view="false" class="sidem">-->
+<!--        <ion-header-bar class=" item-icon-left class="sidem"">
+            <h1 class="title ">Menu</h1>
+
+        </ion-header-bar>-->
+        <ion-content overflow-scroll="false"   >
+               </ion-content>
+        <div  class="menushow1 sidem"  style="z-index:50" ng-show="showMenu1"  >
+            <ul style="display: block;">
+
+                <li class=" item-icon-left" menu-close-keep-history ng-show="show" ui-sref='menu.login' on-tap="goto()">
+                    <div class="div1">  LOGIN</div><div class="div2"><span class="loginicon"></span></div>
+                </li>
+                <li class="item-icon-left " menu-close-keep-history ng-show="show" ui-sref='menu.register' on-tap="goto()">
+                    <div class="div1">  REGISTER</div><div class="div2"><span class="registericon"></span></div>
+                </li>
+                <li  class="item-icon-left username " menu-close-keep-history ng-show="show1">
+                    <div class="div1 newDIv"> {{user}}</div>
+                    <div class="div_21"><i class="home24 ion-arrow-down-b"></i></div>
+                </li>
+                <li class=" item-icon-left Home" ng-style="shadow" menu-close-keep-history ui-sref='menu.home' on-tap="goto()">
+                    <div class="div1">  HOME</div><div class="div21"><i class="home2 ion-android-home"></i></div>
+                </li>
+                <li class=" item-icon-left " menu-close-keep-history ui-sref='menu.recentSearches' on-tap="goto()">
+                    <div class="div1">  MY RECENT SEARCHES</div><div class="div21"><i class="home25 ion-document-text"></i></div>
+                </li>
+                <!--                <li class=" item-icon-left " menu-close-keep-history ng-click="goto('menu.setting')">
+                                    <div class="div1">  SETTINGS</div><div class="div2"><span class="settings"></span></div>
+                                </li>-->
+                <li class=" item-icon-left " menu-close-keep-history ui-sref='menu.Aboutus' on-tap="goto()">
+                    <div class="div1">  ABOUT US</div><div class="div2"><span class="about_us"></span></div>
+                </li>
+                <li class=" item-icon-left " menu-close-keep-history ng-click="feedback()">
+                    <div class="div1">  FEEDBACK</div><div class="div2"><span class="feedback"></span></div>
+                </li>
+                <li class=" item-icon-left " menu-close-keep-history ng-click="rateApp()">
+                    <div class="div1">   Rate APP</div><div class="div2"><span class="rateappicon"></span></div>
+                </li>
+                <li class=" item-icon-left " menu-close-keep-history  on-tap="share()">
+                    <div class="div1">  SHARE</div><div class="div2"><span class="shareappicon"></span></div>
+                </li>
+                <li class=" item-icon-left " menu-close-keep-history  ng-show="show1" ng-click="logout()">
+                    <div class="div1">  logout</div><div class="div2"><i class="home23 ion-log-out"></i></div>
+                </li>
+
+            </ul>
+        </div>
+     
+<!--    </ion-side-menu>
+</ion-side-menus>-->
+
+</ion-view>
+

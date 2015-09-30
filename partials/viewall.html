@@ -1,0 +1,91 @@
+<ion-view view-title=""  style="background-color: rgb(227, 224, 224);" can-swipe-back="false">
+    <div class="bar bar-subheader subheaderCategory">
+        <div class="title_crumb">
+            <div class="page_title" >
+
+                <span ng-bind-html="cat_name"></span>
+            </div>
+        </div>
+        <div class="sortFilter">
+            <div class="catalog_filter" ng-style="fade" ng-click="show('brand')">
+                FILTER
+            </div>
+            <div class="catalog_sort" ng-style="fade" ng-click="sort()">
+                SORT
+            </div>
+        </div>
+        <div class="clearfix"></div>
+    </div>
+    <ion-content class="has-header category" overflow-scroll="true">
+        <div class="cancelFilter card "  ng-show="data2" ng-style="myStyle2" >
+            <div class="divfilter">
+                <div  class="filter_name" >
+                    <div ng-repeat="crum in response.crums track by $index" ng-show="$index != 0 && $index != 1 && $index != 2" > 
+                        <i><img src="img/arrow_right_active.png"></i><i id="filterid" ng-bind-html="crum.name"></i>
+                    </div>
+                </div>
+                <!--                <div  class="filter_name" >
+                                    <div> 
+                                        <div class="f1">
+                                            <div  ng-repeat="fName in final track by $index">{{fName}}
+                                            </div>
+                                        </div>
+                                        <div class="f2">
+                                            <div  ng-repeat="crum in response.crums track by $index" ng-show="$index != 0 && $index != 1 && $index != 2">
+                                                :<i ng-bind-html="crum.name"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>-->
+                <div class="clearfilter" ng-click="clearfilter()">
+                    <button class="button buttonDeal1">CLEAR FILTERS</button>
+                </div>
+            </div>
+        </div>
+        <div class="nomore card "  ng-show="abc" >
+            <i>{{msg}}</i>
+
+        </div>
+        <ion-list class="all_data1" ng-repeat="re in main track by $index" >
+            <div class="listS"  ng-style="myStyle">
+                <ion-list class="all_data">
+
+                    <ion-item class="all_data1" ng-repeat="res in re.display_data track by $index" >
+                        <!--<div class="prod_view_sub_div">-->
+                        <!--                            <div class="catalog_follow">
+                                                    </div>-->
+                        <div class="row row12" ng-click="query_id(res.href)">
+                            <div class=" prod_image product-image">
+                                <img class="imgs"  src= {{res.image}}  />
+                            </div>
+
+                            <div class="product-info prod_details">
+                                <div class=" prod_name item-text-wrap">
+                                    {{res.name}}
+                                </div>
+                                <div class="prod_price" >
+                                    <span ng-bind-html=res.price></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class='redheart' ng-class="{'redheart1':change12 == res.href}" ng-click='priceAlert(res.href)'>
+                        </div>
+
+
+                        <!--</div>-->
+                    </ion-item>
+            </div>
+        </ion-list>
+        <ion-refresher
+            pulling-text="Pull to refresh..."
+            on-refresh="doRefresh()">
+        </ion-refresher>
+        <ion-infinite-scroll
+            on-infinite="loadMore()"
+            ng-if="data3">
+        </ion-infinite-scroll>
+    </ion-content>
+</ion-view>
+
+
+

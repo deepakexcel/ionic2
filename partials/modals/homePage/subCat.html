@@ -1,0 +1,34 @@
+<ion-modal-view style="background-color: rgb(227, 224, 224);">
+    <ion-header-bar class="myhead">
+        <div class="row myfollow">
+
+            <div class="buttonsS col-10" ng-click="subCatModalClose()">
+                <!--                <i class="ion-arrow-left-c backB backme"></i>-->
+
+                <img style="height: 38px;" class=" backB backme" src="img/genie-logo-g.png" alt="Side Navigation">
+            </div>
+
+            <div class="col-90" style="text-align:center">
+                <p class="ptext">{{categoryDisplay}}</p>
+            </div>
+        </div>
+    </ion-header-bar>
+    <ion-content overflow-scroll="true">
+        <div class="all">
+            <div>
+                <div class="my-list">
+
+                    <ul class="logout_ui myui" style="margin-top: 0px;margin-bottom: 0px">
+                        <li class="myitemli nb" ng-repeat="(key,value) in catItems1 track by $index" ng-class="{'homeCat':homeCat == value.cat_name}" on-tap="check(value.cat_id, value.sub_cat_id, value.cat_name)" >
+
+                            <div class="myitemh2div">
+                                <p class="myp2">{{value.cat_name}}</p>
+                            </div>
+                            <div class="clearfix"></div>
+                        </li>
+                    </ul>
+
+                </div>
+            </div>
+    </ion-content>
+</ion-modal-view>

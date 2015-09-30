@@ -1,0 +1,20 @@
+<ion-view style="background-color: rgb(227, 224, 224);" cache-view='false'can-swipe-back="false" hide-nav-bar="true"> 
+    <ion-header-bar align-title="left" class="myheaderbar">
+        <div class="buttons">
+            <button class="button button-clear" ng-click="$ionicGoBack()"> 
+                <i class="icon icon-right ion-android-close">
+
+                </i></button>
+        </div>
+        <h1 class="title" style="text-align: center">Noitfy</h1>
+    </ion-header-bar>
+    <ion-content direction="y" overflow-scroll="true">
+        <div class="deal_notify_text" >Write terms like xiomi, mi3, moto, ipad, shaving etc in the text box below to get latest deals related to them</div>
+        <div class="style">Term:</div>
+
+        <textarea id="deal_term" class="notify_text_area" ng-model="term.text" placeholder="e.g laptop, recharge, movie, etc"></textarea>
+        <div class="notify_term_skip_btn" ng-click="notify()">SKIP</div>
+        <div class="btn notify_term_next_btn"  ng-click="notify()">Finish</div>
+    </ion-content>
+</ion-view>
+

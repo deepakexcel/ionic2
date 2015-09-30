@@ -1,0 +1,57 @@
+<ion-view hide-nav-bar ="true" chache-view="false" can-swipe-back="false">
+    <ion-header-bar>
+        <div class="header_sign_in1">
+            <div class="cross1" ng-click="goback()">
+                <!--                <span><img alt="back" src="img/cross.png" /></span>-->
+                <button class="button button-clear"> 
+                    <i class="icon icon-right ion-android-close">
+                    </i>
+                </button>
+            </div>
+            <div class="title12" >
+                <span>Sign in to PriceGenie</span>
+            </div>
+        </div>
+    </ion-header-bar>
+    <ion-content class='register' overflow-scroll="true">
+        <div class="content_sign_in">
+            <div class="email_register">
+
+
+                <form id="register_form" >
+
+                    <div class="text_fieids1">
+                        <input type="text" placeholder="Name" id="reg" name="reg_firstname" ng-model="model.reg_firstname" /> 
+                        <input type="text" placeholder="Email" id="reg" name="reg_email" ng-model="model.reg_email" ng-pattern="/^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/" /> 
+                        <input type="password" placeholder="Password" id="reg" name="reg_pwd" ng-model="model.reg_pwd"/> 
+                        <input type="password" placeholder="Confirm Password" id="reg" name="reg_con_pwd" ng-model="model.reg_con_pwd"> 
+
+                    </div>
+                    <div class="terms_check">
+                        <input type="checkbox" id="checkbox1" name="terms" ng-model="model.ckeck" ng-click="check()"  value="terms"><span>I agree to  <i class='taC' ng-click="terms()">Terms of Use</i></span>
+
+                    </div>
+                    <div style="clear: both"></div>
+                    <div class="register_sub">
+
+                        <button class="button button-block button-small bt1" ng-click="signup()">Sign Up</button>
+                    </div>
+                </form>
+                <div style="clear: both"></div>
+                <div class="or_OR">
+                    <span>Or</span>
+                </div>
+            </div>
+            <div style="clear: both"></div>
+            <div class="other_register">
+
+                <button class="button button-block button-small bt2" ng-click="facebookLogin()">Connect with Facebook</button>
+
+                <button class="button button-block button-small bt3" ng-click="gogleLogin()">Connect with Google+</button>
+            </div>
+        </div>
+        <div style="clear: both"></div>
+        <div class="footer"></div>
+    </ion-content>
+</ion-view>
+

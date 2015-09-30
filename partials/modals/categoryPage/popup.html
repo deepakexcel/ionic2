@@ -1,0 +1,8 @@
+<!--template for sort item -->
+
+<div class="sort" ng-click='closeModal1()'>SORT BY</div>
+<ul>
+    <li class="sort1" ng-repeat="sort in response.sort_by track by $index" ng-click="sortclose(sort.url, $index)">
+        <i ng-model="choice.A" ng-value="'A'">{{sort.name}}</i>
+    </li>
+</ul>

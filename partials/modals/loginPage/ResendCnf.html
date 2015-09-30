@@ -1,0 +1,26 @@
+<!--tempalte for resend confirmation-->
+<ion-modal-view>
+    <div class="header_sign_in">
+        <div class="cross" ng-click="hide()">
+            <span><img alt="back" src="img/cross.png" /></span>
+        </div>
+        <div class="title1">
+            <span>Sign in to PriceGenie</span>
+        </div>
+    </div>
+    <div class="content_sign_in">
+        <div id="forgot_pass_status" style="display: none"></div>
+        <div style="clear: both"></div>
+        <div class="forgot_email">
+            <form  id="formqw">
+                <div class="text_fieids">
+                    <input type="text" id="reg" placeholder="Enter your email" class="" id="fpwd_email" ng-model='Femail'name="fpwd_email"> <input type="hidden" name="task" value="resetpwd" /> <input type="hidden" name="device" value="mobile" />
+                </div>
+                <div class="forgot_submit">
+                    <button  type="button" class="button button-block button-small bt1" ng-click="resendCnf(Femail)">RESEND CONFIRMATION LINK</button>
+                </div>
+            </form>
+
+        </div>
+    </div>
+</ion-modal-view>

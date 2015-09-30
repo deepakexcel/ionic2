@@ -1,0 +1,148 @@
+<ion-view cache-view="false" style="background-color: #e3e0e0;" can-swipe-back="false">
+    
+    <ion-nav-buttons side="right" cache-view='false' >
+        <button  class="button button-clear button-large  mybuttonnav" ui-sref="menu.YourAlert"> <i class='icon ion-ios-bell colorCH'></i></button>  
+    </ion-nav-buttons>
+    <ion-content  overflow-scroll="true" class="has-header">
+        <div class="conatiner">
+
+             <div class="searchbox" ng-style='boxShadow'>
+                <ul  style="margin-top: 0px;margin-bottom: 0px" >
+                                    <li class="myitemli xy"  ui-sref="menu.search" >
+                                        <div class="imgdiv">
+                                           <i class="icon ion-search searchgimg "></i>
+                                            <!--<i class="icon myicon ion-iphone " style="color:green" ></i>-->
+                                        </div>
+                                        <div class="myitemh2div searchrow">
+                                            <p class="myp">Search product to get lowest prize</p>
+                                        </div>
+                                        <div class="clearfix"></div>
+                                    </li>
+                                    </ul>
+             </div>
+            <div style='clear:both'></div>
+            <div class="all">
+
+                <p class="Heading">Shop by Category</p>
+                <div class="pconent">
+                    <div class="all">
+                        <div>
+                            <div class=" my-list">
+
+                                <ul class="logout_ui myui" style="margin-top: 0px;margin-bottom: 0px" >
+                                    <li class="myitemli" ng-class="{'homeCat':homeCat == 'Mobiles & Tablets'}"  on-tap="loadLatest('Mobiles & Tablets')" >
+                                        <div class="imgdiv">
+                                            <img src="img/cat_icon/Mobiles.png" alt="">
+                                            <!--<i class="icon myicon ion-iphone " style="color:green" ></i>-->
+                                        </div>
+                                        <div class="myitemh2div">
+                                            <p class="myp"> Mobiles & Tablets</p>
+                                        </div>
+                                        <div class="clearfix"></div>
+                                    </li>
+                                    <li class="myitemli" ng-class="{'homeCat':homeCat == 'Books'}"  on-tap="loadLatest('Books')">
+                                        <div class="imgdiv">
+                                            <img src="img/cat_icon/Books.png" alt=""/>
+                                            <!--<i  style="color:blue" class="icon myicon ion-ios-book-outline"></i>-->
+                                        </div>
+                                        <div class="myitemh2div">
+                                            <p class="myp">   Books </p>
+                                        </div>
+                                        <div class="clearfix"></div>
+
+                                    </li>
+                                    <li class="myitemli" ng-class="{'homeCat':homeCat == 'Camera & Accessories'}" on-tap="loadLatest('Camera & Accessories')">
+                                        <div class="imgdiv">
+
+                                            <img src="img/cat_icon/CameraAccessories.png" alt=""/>
+                                            <!--<i  style="color:red" class="icon myicon ion-ios-camera-outline"></i>-->
+                                        </div>
+                                        <div class="myitemh2div">
+                                            <p  class="myp">  Camera & Accessories</p>
+                                        </div>
+                                        <div class="clearfix"></div>
+
+                                    </li>
+                                    <li class="myitemli" ng-class="{'homeCat':homeCat == 'Laptop & Desktop'}" on-tap="loadLatest('Laptop & Desktop')" >
+                                        <div class="imgdiv">
+                                            <img src="img/cat_icon/LaptopsDesktops.png" alt=""/>
+                                            <!--<i  style="color:peru" class="icon myicon ion-laptop"></i>-->
+                                        </div>
+                                        <div class="myitemh2div">
+                                            <p class="myp">  Laptop & Desktop</p>
+                                        </div>
+                                        <div class="clearfix"></div>
+
+                                    </li>
+
+                                    <li class="myitemli" ng-class="{'homeCat':homeCat == 'Kitchen Appliances'}"  on-tap="loadLatest('Kitchen Appliances')">
+                                        <div class="imgdiv">
+                                            <img src="img/cat_icon/KitchenAppliances.png" alt=""/>
+                                            <!--<i  style="color:pink" class="icon myicon ion-coffee"></i>-->
+                                        </div>
+                                        <div class="myitemh2div">
+                                            <p class="myp">   Kitchen Appliances</p>
+                                        </div>
+                                        <div class="clearfix"></div>
+
+                                    </li>
+
+                                    <li class="myitemli" ng-class="{'homeCat':homeCat == 'Home Appliances'}"  on-tap="loadLatest('Home Appliances')" >
+                                        <div class="imgdiv">
+                                            <img src="img/cat_icon/HomeAppliances.png" alt=""/>
+                                            <!--<i  style="color:orange" class="icon myicon ion-ios-home-outline"></i>-->
+                                        </div>
+                                        <div class="myitemh2div">
+                                            <p class="myp">   Home Appliances</p>
+                                        </div>
+                                        <div class="clearfix"></div>
+
+                                    </li>
+                                    <li class="myitemli" ng-class="{'homeCat':homeCat == 'TV & Home Audio'}"  on-tap="loadLatest('TV & Home Audio')" >
+                                        <div class="imgdiv">
+                                            <img src="img/cat_icon/Television.png" alt=""/>
+                                            <!--<i  style="color:coral" class="icon myicon ion-easel"></i>-->
+                                        </div>
+                                        <div class="myitemh2div">
+                                            <p class="myp">  TV & Home Audio</p>
+                                        </div>
+                                        <div class="clearfix"></div>
+
+                                    </li>
+
+
+                                    <li class="myitemli" ng-class="{'homeCat':homeCat == 'Computer Accessories'}" on-tap="loadLatest('Computer Accessories')">
+                                        <div class="imgdiv">
+                                            <img src="img/cat_icon/DesktopLaptopAccessories.png" alt=""/>
+                                            <!--<i  style="color:gold" class="icon myicon ion-ios-printer-outline"></i>-->
+                                        </div>
+                                        <div class="myitemh2div">
+                                            <p class="myp">  Computer Accessories </p>
+                                        </div>
+                                        <div class="clearfix"></div>
+
+                                    </li>
+                                    <li class="myitemli" ng-class="{'homeCat':homeCat == 'Computer Components'}"  on-tap="loadLatest('Computer Components')">
+                                        <div class="imgdiv">
+                                            <img src="img/cat_icon/ComputerComponents.png" alt=""/>
+
+                                            <!--<i  style="color:silver" class="icon myicon ion-android-laptop"></i>-->
+                                        </div>
+                                        <div class="myitemh2div">
+                                            <p class="myp"> Computer Components </p>
+                                        </div>
+                                        <div class="clearfix"></div>
+
+                                    </li>
+                                </ul>
+
+                            </div>
+                        </div>
+                        <div style='clear:both'></div>
+                    </div>
+                    <div style='clear:both'></div>
+                </div>
+            </div>
+        </div>
+    </ion-content>
+</ion-view>

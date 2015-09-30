@@ -1,0 +1,32 @@
+<!--//settings page @siddharth-->
+<ion-view view-title="" cache-view="false" can-swipe-back="false">
+
+    <div class="bar bar-subheader subheaderCategory">
+        <div class="title_crumb">
+            <div class="page_title" >
+
+                <span>Settings</span>
+            </div>
+        </div>
+
+        <div class="clearfix"></div>
+    </div>
+
+    <ion-content class="has-header" overflow-scroll="true">
+        <div class="account-setting-list">
+            <div class="account-heading">Account</div>
+            <ul class="logout_ui" style="margin-top: 0px;margin-bottom: 0px">
+                <li ui-sref="menu.login" ng-show="show">Login</li>
+                <li ui-sref="menu.register" ng-show="show">Register</li>
+                <li  ng-show="show1" ng-click="logout()">logout</li>
+                <li ui-sref="menu.recentSearches">My Recent Searches</span></li>
+
+                <li ui-sref="menu.Aboutus">About Us</li>
+                <li ui-sref="menu.Contactus">Contact Us</li>
+                <li ng-click="feedback()">Feedback</li>
+
+            </ul>
+
+        </div>
+    </ion-content>
+</ion-view>
